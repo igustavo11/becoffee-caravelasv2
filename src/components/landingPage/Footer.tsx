@@ -1,4 +1,3 @@
-// components/footer.tsx
 "use client";
 
 import { Instagram, MapPin, MessageCircle } from "lucide-react";
