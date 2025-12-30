@@ -10,7 +10,7 @@ import { PHONE } from "@/lib/constants";
 
 export function Reserve() {
   const message = encodeURIComponent(
-    "Olá! Gostaria de fazer uma reserva na Bê Coffee."
+    "Olá! Gostaria de fazer uma reserva na Bê Coffee.",
   );
   const whatsappUrl = `https://wa.me/${PHONE}?text=${message}`;
 

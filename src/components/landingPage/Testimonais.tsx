@@ -64,7 +64,7 @@ export default function Testimonials() {
                             size={16}
                             className="fill-[var(--color-primary)] text-[var(--color-primary)]"
                           />
-                        )
+                        ),
                       )}
                       <span className="text-sm font-semibold ml-1">5.0</span>
                     </div>

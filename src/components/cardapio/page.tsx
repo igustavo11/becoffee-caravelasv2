@@ -37,7 +37,7 @@ const CATEGORIAS = [
   { id: "tapiocas", name: "Tapioca/Crepioca", icon: "pizza" },
   { id: "tortas", name: "Tortas Doces", icon: "cake" },
   { id: "bolos", name: "Bolos Especiais", icon: "cake" },
-  { id: "Doces", name: "Doces", icon: "cookie" },
+  { id: "doces", name: "Doces", icon: "cookie" },
 ];
 
 // Informações especiais por categoria
@@ -45,12 +45,12 @@ const CATEGORIA_INFO: { [key: string]: any } = {
   tapiocas: {
     title: "Monte do Seu Jeito!",
     description:
-      "<strong>Tapiocas e Crepiocas:</strong> 1 recheio = R$ 15,00 | 2 recheios = R$ 18,00 | 3 recheios = R$ 21,00",
+      "Tapiocas e Crepiocas: 1 recheio = R$ 15,00 | 2 recheios = R$ 18,00 | 3 recheios = R$ 21,00",
     note: "Acréscimo de R$ 3,00 por recheio adicional",
   },
   salgados: {
     title: "Monte do Seu Jeito!",
-    description: "<strong>Cuscuz Recheado:</strong> 1 recheio = R$ 15,00",
+    description: "Cuscuz Recheado: 1 recheio = R$ 15,00",
     note: "Acréscimo de R$ 2,00 por recheio adicional",
   },
 };
