@@ -31,7 +31,7 @@ export interface CategoryInfo {
   note?: string;
 }
 
-type MenuSeedItem = Omit<MenuItem, "num">;
+type MenuSeedItem = Omit<MenuItem, "num"> & { num?: string };
 
 export const CATEGORIES: MenuCategory[] = [
   { id: "cafe", name: "Cafés", icon: "coffee" },
@@ -351,11 +351,12 @@ const MENU_SEED: Record<string, MenuSeedItem[]> = {
       price: 29.0,
     },
     {
-      id: "Bolo-de-pacoca",
+      id: "Bolo-pacoquinha",
       img: "/img/cardapio/bolos/bolo-de-pacoca.jpg",
-      name: "Bolo de paçoca",
+      name: "Bolo paçoquinha",
       dsc: "(Fatia) Uma combinação deliciosa, este bolo é feito com uma massa macia e fofinha, recheado com um saboroso creme de ninho e um delicioso creme de paçoca. É coberto por uma deliciosa camada quatro leites.",
       price: 25.0,
+      num: "044",
     },
   ],
   doces: [
@@ -415,6 +416,10 @@ function withSequentialNumbers(
     if (!items) continue;
 
     menu[key] = items.map((item) => {
+      if (item.num) {
+        return { ...item, num: item.num };
+      }
+
       counter += 1;
       return { ...item, num: String(counter).padStart(3, "0") };
     });
