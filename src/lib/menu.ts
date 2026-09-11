@@ -211,14 +211,14 @@ const MENU_SEED: Record<string, MenuSeedItem[]> = {
     },
     {
       id: "toasts-queijo",
-      img: "/img/cardapio/toasts/queijo.png",
+      img: "/img/cardapio/toasts/toast-chapa.jpg",
       name: "Pão na chapa com queijo especial",
       dsc: "Aquela manteiga que derrete e deixa um sabor todo especial, combinando com o pão de casca rústica, fatias mais grossas e incrivelmente macio com adicional de queijo minas derretido proporcionando mais sabor ao pão",
       price: 13.0,
     },
     {
       id: "toasts-ovo",
-      img: "/img/cardapio/toasts/toastsovos.png",
+      img: "/img/cardapio/toasts/toast-chapa.jpg",
       name: "Pão na chapa com ovos mexidos e bacon",
       dsc: "Aquela manteiga que derrete e deixa um sabor todo especial, combinando com o pão de casca rústica, fatias mais grossas e incrivelmente macio com adicional de ovo e cubinhos de bacon frito  proporcionando mais sabor ao pão",
       price: 16.0,
@@ -349,6 +349,13 @@ const MENU_SEED: Record<string, MenuSeedItem[]> = {
       name: "Red Velvet",
       dsc: "(Fatia) Um bolo americano famoso por sua cor vermelha vibrante e textura macia. É recheado com uma generosa camada de cream cheese, que equilibra perfeitamente com a cobertura cremosa de quatro leites acompanhada de uma deliciosa geleia de frutas vermelhas.",
       price: 29.0,
+    },
+    {
+      id: "Bolo-de-pacoca",
+      img: "/img/cardapio/bolos/bolo-de-pacoca.jpg",
+      name: "Bolo de paçoca",
+      dsc: "(Fatia) Uma combinação deliciosa, este bolo é feito com uma massa macia e fofinha, recheado com um saboroso creme de ninho e um delicioso creme de paçoca. É coberto por uma deliciosa camada quatro leites.",
+      price: 25.0,
     },
   ],
   doces: [
