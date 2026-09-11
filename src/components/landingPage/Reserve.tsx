@@ -101,7 +101,6 @@ export function Reserve() {
                     width={320}
                     height={320}
                     className="w-full h-auto"
-                    priority
                   />
                 </motion.div>
               </div>

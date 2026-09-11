@@ -18,7 +18,7 @@ export function MenuCard({ item, onClick }: MenuCardProps) {
       onClick={onClick}
     >
       <span className="img-produto">
-        <Image src={item.img} alt="" fill className="object-cover" />
+        <Image src={item.img} alt={item.name} fill className="object-cover" />
       </span>
       <span className="title-produto text-center mt-4">
         <span className="num-produto">{item.num}</span>

@@ -115,6 +115,8 @@ export default function Hero() {
               src="/img/logo22.jpeg"
               alt="Bê Coffee Produtos"
               fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-contain"
             />
 

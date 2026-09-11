@@ -20,7 +20,6 @@ export function Footer() {
               width={120}
               height={60}
               className="w-auto h-auto max-w-[150px]"
-              priority
             />
           </div>
           <div className="flex justify-center items-center">

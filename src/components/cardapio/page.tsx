@@ -45,9 +45,9 @@ export default function CardapioPage() {
             <span className="hint-title">
               <b>Cardápio</b>
             </span>
-            <h1 className="title">
+            <h2 className="title">
               <b>Conheça nosso cardápio</b>
-            </h1>
+            </h2>
             <p>clique em nossos produtos para saber mais</p>
           </div>
           <MenuFilters
