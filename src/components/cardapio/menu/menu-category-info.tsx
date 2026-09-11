@@ -1,32 +1,37 @@
 import { Sparkles } from "lucide-react";
-import { Card } from "@/components/ui/card";
-
-interface CategoryInfo {
-  title: string;
-  description: string;
-  note?: string;
-}
+import type { CategoryInfo } from "@/lib/menu";
 
 interface MenuCategoryInfoProps {
   info: CategoryInfo;
 }
 
 export function MenuCategoryInfo({ info }: MenuCategoryInfoProps) {
+  const [label, ...rest] = info.description.split(":");
+  const body = rest.join(":").trim();
+
   return (
-    <div className="w-full px-4 mb-6">
-      <Card className="bg-white text-black p-6 rounded-[20px] text-center shadow-[0_8px_25px_rgba(188,117,50,0.3)] border-2 border-(--color-secondary)">
-        <h5 className="text-(--color-primary) text-[22px] mb-4 font-bold font-sans flex items-center justify-center gap-2">
-          <Sparkles className="w-6 h-6" /> {info.title}
+    <div className="col-12 mb-4">
+      <div className="card-info-categoria">
+        <h5>
+          <Sparkles
+            size={24}
+            style={{
+              display: "inline-block",
+              verticalAlign: "-4px",
+              marginRight: 10,
+            }}
+          />{" "}
+          {info.title}
         </h5>
-        <p className="mb-2 text-base leading-6 text-black font-sans">
-          {info.description}
+        <p>
+          <strong>{label}:</strong> {body}
         </p>
         {info.note && (
-          <p className="text-(--color-primary) text-sm mb-0 font-medium font-sans">
+          <p className="acrescimo">
             <em>{info.note}</em>
           </p>
         )}
-      </Card>
+      </div>
     </div>
   );
 }

@@ -7,12 +7,25 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build",
+      "!.zed",
+      "!.vscode"
+    ]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2
+  },
+  "json": {
+    "parser": {
+      "allowTrailingCommas": true
+    }
   },
   "linter": {
     "enabled": true,

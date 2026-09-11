@@ -7,6 +7,8 @@ import { useState } from "react";
 import { TESTIMONIALS } from "@/lib/constants";
 import { Button } from "../ui/button";
 
+const STAR_KEYS = ["s1", "s2", "s3", "s4", "s5"];
+
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
   const testimonial = TESTIMONIALS[current];
@@ -57,15 +59,13 @@ export default function Testimonials() {
                       {testimonial.name}
                     </h3>
                     <div className="flex items-center gap-2 mt-1">
-                      {Array.from({ length: testimonial.rating }).map(
-                        (_, i) => (
-                          <Star
-                            key={i}
-                            size={16}
-                            className="fill-[var(--color-primary)] text-[var(--color-primary)]"
-                          />
-                        ),
-                      )}
+                      {STAR_KEYS.slice(0, testimonial.rating).map((key) => (
+                        <Star
+                          key={key}
+                          size={16}
+                          className="fill-[var(--color-primary)] text-[var(--color-primary)]"
+                        />
+                      ))}
                       <span className="text-sm font-semibold ml-1">5.0</span>
                     </div>
                   </div>
@@ -87,9 +87,9 @@ export default function Testimonials() {
             </AnimatePresence>
 
             <div className="flex gap-4">
-              {TESTIMONIALS.map((_, index) => (
+              {TESTIMONIALS.map((item, index) => (
                 <Button
-                  key={index}
+                  key={item.id}
                   onClick={() => setCurrent(index)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     current === index

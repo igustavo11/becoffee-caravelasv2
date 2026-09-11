@@ -3,20 +3,17 @@
 import Image from "next/image";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import type { MenuItem } from "@/lib/menu";
 
 interface MenuModalProps {
   isOpen: boolean;
   onClose: () => void;
-  item: {
-    img: string;
-    name: string;
-    dsc: string;
-  } | null;
+  item: MenuItem | null;
 }
 
 export function MenuModal({ isOpen, onClose, item }: MenuModalProps) {
@@ -24,26 +21,25 @@ export function MenuModal({ isOpen, onClose, item }: MenuModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[700px] bg-(--color-background) border-none p-0 rounded-[20px]">
-        <div className="relative w-full">
+      <DialogContent
+        showCloseButton={false}
+        className="cardapio-font cardapio-modal"
+      >
+        <DialogClose className="cardapio-close" aria-label="Fechar">
+          &times;
+        </DialogClose>
+        <span className="modal-img">
           <Image
             src={item.img}
             alt={item.name}
-            width={700}
-            height={500}
-            className="w-full rounded-t-[20px] object-cover"
-            priority
+            fill
+            className="object-contain"
+            sizes="460px"
           />
-        </div>
-
-        <DialogHeader className="px-6 pb-6">
-          <DialogTitle className="text-center text-(--color-primary) text-3xl font-bold font-sans">
-            {item.name}
-          </DialogTitle>
-          <DialogDescription className="text-center text-(--color-text) text-base leading-relaxed mt-3">
-            {item.dsc}
-          </DialogDescription>
-        </DialogHeader>
+        </span>
+        <span className="num-produto num-modal">{item.num}</span>
+        <DialogTitle className="modal-name">{item.name}</DialogTitle>
+        <DialogDescription className="modal-desc">{item.dsc}</DialogDescription>
       </DialogContent>
     </Dialog>
   );
