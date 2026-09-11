@@ -160,6 +160,37 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .scrollbar-elegant::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar-elegant::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-elegant::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+  }
+
+  .scrollbar-elegant::-webkit-scrollbar-thumb {
+    background-color: #bc7532;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 9999px;
+  }
+
+  .scrollbar-elegant::-webkit-scrollbar-thumb:hover {
+    background-color: #8b5a28;
+  }
+
+  .scrollbar-elegant::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
 /* ==========================================================================
@@ -478,13 +509,15 @@ b {
 }
 
 /* ==========================================================================
-   Modal do produto — paridade com o v1
+   Modal do produto — layout responsivo (altura fixa + corpo rolável)
    ========================================================================== */
 
 .cardapio-modal {
-  display: block;
-  width: 90%;
+  display: flex;
+  flex-direction: column;
+  width: min(90vw, 500px);
   max-width: 500px;
+  height: min(88dvh, 680px);
   padding: 20px;
   background-color: #fff8eb;
   color: #212121;
@@ -492,16 +525,22 @@ b {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
   gap: 0;
+  overflow: hidden;
 }
 
 .cardapio-modal .cardapio-close {
   position: absolute;
-  top: 12px;
-  right: 20px;
+  top: 8px;
+  right: 12px;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   color: #000;
   font-family: var(--font-poppins), sans-serif;
-  font-size: 55px;
+  font-size: 40px;
   font-weight: bold;
   line-height: 1;
   cursor: pointer;
@@ -514,36 +553,69 @@ b {
   color: #212121;
 }
 
-.cardapio-modal .modal-img {
+.cardapio-modal .modal-media {
   position: relative;
-  display: block;
+  flex: 1 1 auto;
   width: 100%;
-  height: 60vh;
-  max-height: 500px;
+  min-height: 150px;
+  border-radius: 11px;
+  overflow: hidden;
 }
 
-.cardapio-modal .modal-img img {
+.cardapio-modal .modal-media img {
   object-fit: contain;
   border-radius: 11px;
 }
 
-.cardapio-modal .num-modal {
-  font-size: 11px;
+.cardapio-modal .modal-body {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  max-height: 62%;
+  min-height: 0;
   margin-top: 12px;
+  overflow: hidden;
+}
+
+.cardapio-modal .num-modal {
+  align-self: flex-start;
+  font-size: 11px;
+  margin-top: 0;
   margin-right: 0;
 }
 
 .cardapio-modal .modal-name {
   margin-top: 5px;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.2;
   color: #212121;
   font-weight: bold;
 }
 
 .cardapio-modal .modal-desc {
+  flex: 1 1 auto;
+  min-height: 0;
   margin-top: 5px;
+  padding-right: 6px;
+  padding-bottom: 4px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   font-size: 15px;
   line-height: 1.5;
   color: #212121;
+}
+
+@media (max-width: 767px) {
+  .cardapio-modal {
+    height: 86dvh;
+  }
+
+  .cardapio-modal .modal-name {
+    font-size: 24px;
+  }
+
+  .cardapio-modal .modal-desc {
+    font-size: 16px;
+  }
 }

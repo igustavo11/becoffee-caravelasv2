@@ -28,18 +28,22 @@ export function MenuModal({ isOpen, onClose, item }: MenuModalProps) {
         <DialogClose className="cardapio-close" aria-label="Fechar">
           &times;
         </DialogClose>
-        <span className="modal-img">
+        <div className="modal-media">
           <Image
             src={item.img}
             alt={item.name}
             fill
             className="object-contain"
-            sizes="460px"
+            sizes="(max-width: 500px) 80vw, 460px"
           />
-        </span>
-        <span className="num-produto num-modal">{item.num}</span>
-        <DialogTitle className="modal-name">{item.name}</DialogTitle>
-        <DialogDescription className="modal-desc">{item.dsc}</DialogDescription>
+        </div>
+        <div className="modal-body">
+          <span className="num-produto num-modal">{item.num}</span>
+          <DialogTitle className="modal-name">{item.name}</DialogTitle>
+          <DialogDescription className="modal-desc scrollbar-elegant">
+            {item.dsc}
+          </DialogDescription>
+        </div>
       </DialogContent>
     </Dialog>
   );
