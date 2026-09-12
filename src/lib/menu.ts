@@ -57,7 +57,7 @@ export const CATEGORY_INFO: Record<string, CategoryInfo> = {
   },
   salgados: {
     title: "Monte do Seu Jeito!",
-    description: "Cuscuz Recheado: 1 recheio = R$ 15,00",
+    description: "Cuscuz Recheado: 1 recheio = R$ 16,00",
     note: "Acréscimo de R$ 3,00 por recheio adicional",
   },
 };
